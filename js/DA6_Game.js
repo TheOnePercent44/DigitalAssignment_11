@@ -97,6 +97,11 @@ Secrets.Game.prototype = {
 		this.game.physics.arcade.overlap(bulletgroup, layer, bulletKill, null, this);
 		
 		player.move();
+		if(!fireFlag && game.input.activePointer.isDown)
+		{
+			fireFlag = true;
+			playerShoot();
+		}
 		if(this.game.time.now-timeMark > 2000)
 		{
 			shootFlag = true;

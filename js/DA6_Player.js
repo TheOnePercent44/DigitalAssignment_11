@@ -4,11 +4,30 @@ function newPlayer(game, xcoord, ycoord)
 	this.sprite = this.game.add.sprite(xcoord, ycoord, 'purpleBlock');
 	this.game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
 	this.MAX_SPEED = 500; // pixels/second
+	this.MINDIST = 32;
     this.ACCELERATION = 1500; // pixels/second/second
     this.DRAG = 500; // pixels/second
 	this.sprite.body.collideWorldBounds = true;
 	this.sprite.body.maxVelocity.setTo(this.MAX_SPEED, 0); // x, y
 	this.sprite.body.drag.setTo(this.DRAG, 0); // x, y
+	
+	this.move = function()
+	{
+		var distance = this.game.math.distance(this.x, this.y, this.target.x, this.target.y);
+		if (distance > this.MINDIST)
+		{
+        // Calculate the angle to the target
+			var rotation = this.game.math.angleBetween(this.x, this.y, this.target.x, this.target.y);
+
+			// Calculate velocity vector based on rotation and this.MAX_SPEED
+			this.body.velocity.x = Math.cos(rotation) * this.MAX_SPEED;
+			this.body.velocity.y = Math.sin(rotation) * this.MAX_SPEED;
+		}
+		else
+		{
+			this.body.velocity.setTo(0, 0);
+		}
+	}
 	
 	this.idle = function()
 	{

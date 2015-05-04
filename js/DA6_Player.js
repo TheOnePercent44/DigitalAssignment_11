@@ -26,7 +26,7 @@ function newPlayer(game, xcoord, ycoord)
 		}
 		else
 		{
-			this.body.velocity.setTo(0, 0);
+			this.sprite.body.velocity.setTo(0, 0);
 		}
 	}
 	

@@ -97,7 +97,7 @@ Secrets.Game.prototype = {
 		this.game.physics.arcade.overlap(bulletgroup, layer, bulletKill, null, this);
 		
 		player.move();
-		if(!fireFlag && game.input.activePointer.isDown)
+		if(!fireFlag && this.game.input.activePointer.isDown)
 		{
 			fireFlag = true;
 			playerShoot();

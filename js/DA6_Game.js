@@ -26,7 +26,7 @@ Secrets.Game = function (game) {
 
 var layer, map, leftKey, rightKey, spaceKey, upKey, downKey, aKey, sKey, dKey, wKey;
 var player, baddies, orangeLB, orangeRB, yellowSB, bulletgroup, enemybullets;
-var LBflag, RBflag, timeMark, shootFlag;
+var fireFlag, timeMark, shootFlag;
 Secrets.Game.prototype = {
     create: function () {
 	///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,7 +51,7 @@ Secrets.Game.prototype = {
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 		player = new newPlayer(this.game, this.game.rnd.integerInRange(0, 3168), 192);
 		this.game.camera.follow(player.sprite, this.game.camera.FOLLOW_PLATFORMER);
-		this.game.camera.width = 800;//dangerous use of camera.width?
+		//this.game.camera.width = 800;//dangerous use of camera.width?
 		
 		baddies = this.game.add.group();
 		baddies.enableBody = true;
@@ -83,10 +83,11 @@ Secrets.Game.prototype = {
 		
 		LBflag = false;
 		RBflag = false;*/
-		this.game.input.mouseDownCallback = playerShoot;
+		//this.game.input.mouseDownCallback = playerShoot;
 		
 		timeMark = this.game.time.now;
 		shootFlag = false;
+		fireFlag = false;
     },
 
     update: function () {
@@ -95,22 +96,6 @@ Secrets.Game.prototype = {
 		//this.game.physics.arcade.overlap(bulletgroup, enemybullets, bulletClash, null, this);
 		this.game.physics.arcade.overlap(bulletgroup, layer, bulletKill, null, this);
 		
-		/*if(RBflag)//rightKey.isDown || 
-		{
-			player.moveRight();
-		}
-		else if(LBflag)//leftKey.isDown || 
-		{
-			player.moveLeft();
-		}
-		else
-		{
-			player.idle();
-		}*/
-		/*if(this.game.input.activePointer.isDown)
-		{
-			playerShoot();
-		}*/
 		player.move();
 		if(this.game.time.now-timeMark > 2000)
 		{

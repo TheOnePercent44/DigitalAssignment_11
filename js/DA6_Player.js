@@ -15,7 +15,7 @@ function newPlayer(game, xcoord, ycoord)
 	
 	this.move = function()
 	{
-		//var distance = this.game.math.distance(this.sprite.x, this.sprite.y, this.target.x, this.target.y);
+		/*var distance = this.game.math.distance(this.sprite.x, this.sprite.y, this.target.x, this.target.y);
 		//if (distance > this.MINDIST)
 		//{
         // Calculate the angle to the target
@@ -28,7 +28,8 @@ function newPlayer(game, xcoord, ycoord)
 		//else
 		//{
 		//	this.sprite.body.velocity.setTo(0, 0);
-		//}
+		//}*/
+		this.game.physics.moveToPointer(this.sprite, this.MAX_SPEED);
 	}
 	
 	/*this.idle = function()

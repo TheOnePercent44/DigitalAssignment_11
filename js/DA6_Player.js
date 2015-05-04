@@ -19,18 +19,18 @@ function newPlayer(game, xcoord, ycoord)
 		//if (distance > this.MINDIST)
 		//{
         // Calculate the angle to the target
-			var rotation = this.game.math.angleBetween(this.sprite.x, this.sprite.y, this.target.x, this.target.y);
+			*/var rotation = this.game.math.angleBetween(this.sprite.x, this.sprite.y, this.target.x, this.target.y);
 
 			// Calculate velocity vector based on rotation and this.MAX_SPEED
 			this.sprite.body.velocity.x = Math.cos(rotation) * this.MAX_SPEED;
 			this.sprite.body.velocity.y = Math.sin(rotation) * this.MAX_SPEED;
-		//}
+		/*/}
 		//else
 		//{
 		//	this.sprite.body.velocity.setTo(0, 0);
 		//}*/
 		//this.game.physics.moveToPointer(this.sprite, this.MAX_SPEED);
-		Phaser.Physics.Arcade.moveToPointer(this.sprite, this.MAX_SPEED);
+		//Phaser.Physics.Arcade.moveToPointer(this.sprite, this.MAX_SPEED);
 	}
 	
 	/*this.idle = function()

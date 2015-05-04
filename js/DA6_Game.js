@@ -108,7 +108,7 @@ Secrets.Game.prototype = {
 		}*/
 		if(this.game.input.activePointer.isDown)
 		{
-			player.shoot();
+			playerShoot();
 		}
 		player.move();
 		if(this.game.time.now-timeMark > 2000)

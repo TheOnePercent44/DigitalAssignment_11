@@ -9,7 +9,7 @@ function newPlayer(game, xcoord, ycoord)
     this.ACCELERATION = 1500; // pixels/second/second
     this.DRAG = 500; // pixels/second
 	this.sprite.body.collideWorldBounds = true;
-	this.sprite.body.maxVelocity.setTo(this.MAX_SPEED, 0); // x, y
+	this.sprite.body.maxVelocity.setTo(this.MAX_SPEED, this.MAX_SPEED); // x, y
 	//this.sprite.body.drag.setTo(this.DRAG, 0); // x, y
 	this.target = this.game.input;
 	

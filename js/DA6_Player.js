@@ -29,7 +29,8 @@ function newPlayer(game, xcoord, ycoord)
 		//{
 		//	this.sprite.body.velocity.setTo(0, 0);
 		//}*/
-		this.game.physics.moveToPointer(this.sprite, this.MAX_SPEED);
+		//this.game.physics.moveToPointer(this.sprite, this.MAX_SPEED);
+		Phaser.Physics.Arcade.moveToPointer(this.sprite, this.MAX_SPEED);
 	}
 	
 	/*this.idle = function()

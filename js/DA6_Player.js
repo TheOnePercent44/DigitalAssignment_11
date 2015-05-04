@@ -10,10 +10,11 @@ function newPlayer(game, xcoord, ycoord)
 	this.sprite.body.collideWorldBounds = true;
 	this.sprite.body.maxVelocity.setTo(this.MAX_SPEED, 0); // x, y
 	this.sprite.body.drag.setTo(this.DRAG, 0); // x, y
+	this.target = this.game.input;
 	
 	this.move = function()
 	{
-		var distance = this.game.math.distance(this.x, this.y, this.target.x, this.target.y);
+		var distance = this.game.math.distance(this.sprite.x, this.sprite.y, this.target.x, this.target.y);
 		if (distance > this.MINDIST)
 		{
         // Calculate the angle to the target

@@ -15,23 +15,23 @@ function newPlayer(game, xcoord, ycoord)
 	
 	this.move = function()
 	{
-		var distance = this.game.math.distance(this.sprite.x, this.sprite.y, this.target.x, this.target.y);
-		if (distance > this.MINDIST)
-		{
+		//var distance = this.game.math.distance(this.sprite.x, this.sprite.y, this.target.x, this.target.y);
+		//if (distance > this.MINDIST)
+		//{
         // Calculate the angle to the target
 			var rotation = this.game.math.angleBetween(this.sprite.x, this.sprite.y, this.target.x, this.target.y);
 
 			// Calculate velocity vector based on rotation and this.MAX_SPEED
 			this.sprite.body.velocity.x = Math.cos(rotation) * this.MAX_SPEED;
 			this.sprite.body.velocity.y = Math.sin(rotation) * this.MAX_SPEED;
-		}
-		else
-		{
-			this.sprite.body.velocity.setTo(0, 0);
-		}
+		//}
+		//else
+		//{
+		//	this.sprite.body.velocity.setTo(0, 0);
+		//}
 	}
 	
-	this.idle = function()
+	/*this.idle = function()
 	{
 		this.sprite.body.acceleration.x = 0;
 	}
@@ -44,7 +44,7 @@ function newPlayer(game, xcoord, ycoord)
 	this.moveLeft = function()
 	{
 		this.sprite.body.acceleration.x = -this.ACCELERATION;
-	}
+	}*/
 	
 	this.shoot = function(bulletgroup)
 	{

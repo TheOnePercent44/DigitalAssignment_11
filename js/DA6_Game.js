@@ -46,7 +46,7 @@ Secrets.Game.prototype = {
 		map.addTilesetImage('blueBlock_32x32', 'blueBlock');
 		layer = map.createLayer('Background');
 		layer = map.createLayer('Land');
-		layer.resizeWorld();
+		//layer.resizeWorld();
 		map.setCollision(2, true, 'Land', true);
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 		player = new newPlayer(this.game, this.game.rnd.integerInRange(0, 3168), 192);

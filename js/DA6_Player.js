@@ -20,8 +20,8 @@ function newPlayer(game, xcoord, ycoord)
 			var rotation = this.game.math.angleBetween(this.x, this.y, this.target.x, this.target.y);
 
 			// Calculate velocity vector based on rotation and this.MAX_SPEED
-			this.body.velocity.x = Math.cos(rotation) * this.MAX_SPEED;
-			this.body.velocity.y = Math.sin(rotation) * this.MAX_SPEED;
+			this.sprite.body.velocity.x = Math.cos(rotation) * this.MAX_SPEED;
+			this.sprite.body.velocity.y = Math.sin(rotation) * this.MAX_SPEED;
 		}
 		else
 		{

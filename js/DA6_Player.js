@@ -2,6 +2,7 @@ function newPlayer(game, xcoord, ycoord)
 {
 	this.game = game;
 	this.sprite = this.game.add.sprite(xcoord, ycoord, 'purpleBlock');
+	this.sprite.anchor.setTo(0.5, 0.5);
 	this.game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
 	this.MAX_SPEED = 500; // pixels/second
 	this.MINDIST = 32;

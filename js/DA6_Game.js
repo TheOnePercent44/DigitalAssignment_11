@@ -83,7 +83,7 @@ Secrets.Game.prototype = {
 		
 		LBflag = false;
 		RBflag = false;*/
-		this.game.input.mouseDownCallback(playerShoot);
+		this.game.input.mouseDownCallback = playerShoot;
 		
 		timeMark = this.game.time.now;
 		shootFlag = false;

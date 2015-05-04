@@ -66,7 +66,7 @@ Secrets.Game.prototype = {
 		enemybullets = this.game.add.group();
 		enemybullets.enableBody = true;
 	///////////////////////////////////////////////////////////////////////////////////////////////////	
-		yellowSB = this.game.add.sprite(this.game.camera.x+(this.game.camera.width/2)-16, 704, 'yellowBlock');//the camera's x postion, +center of the camera, shifted 16 left to center the square
+		/*yellowSB = this.game.add.sprite(this.game.camera.x+(this.game.camera.width/2)-16, 704, 'yellowBlock');//the camera's x postion, +center of the camera, shifted 16 left to center the square
 		orangeLB = this.game.add.sprite(yellowSB.x-38, 704, 'orangeBlock');//position of yellow, -spacing of 48
 		orangeRB = this.game.add.sprite(yellowSB.x+38, 704, 'orangeBlock');//position of yellow, +spacing of 48
 		
@@ -82,7 +82,7 @@ Secrets.Game.prototype = {
 		orangeRB.events.onInputUp.add(movePlayerRight, this.game);
 		
 		LBflag = false;
-		RBflag = false;
+		RBflag = false;*/
 		
 		timeMark = this.game.time.now;
 		shootFlag = false;
@@ -94,7 +94,7 @@ Secrets.Game.prototype = {
 		//this.game.physics.arcade.overlap(bulletgroup, enemybullets, bulletClash, null, this);
 		this.game.physics.arcade.overlap(bulletgroup, layer, bulletKill, null, this);
 		
-		if(RBflag)//rightKey.isDown || 
+		/*if(RBflag)//rightKey.isDown || 
 		{
 			player.moveRight();
 		}
@@ -105,7 +105,12 @@ Secrets.Game.prototype = {
 		else
 		{
 			player.idle();
+		}*/
+		if(this.game.input.activePointer.isDown)
+		{
+			player.shoot();
 		}
+		player.move();
 		if(this.game.time.now-timeMark > 2000)
 		{
 			shootFlag = true;
@@ -113,7 +118,7 @@ Secrets.Game.prototype = {
 		baddies.forEachAlive(EnemyUpdate, this, this);
 		if(shootFlag)
 		{
-			timeMark = this.game.time.now;
+			timeMark = this.game.time.now+this.game.rnd.integerInRange(-1000, 2500);;
 			shootFlag = false;
 		}
 		if(baddies.countLiving <= 0)
@@ -121,9 +126,9 @@ Secrets.Game.prototype = {
 			this.state.start('WinScreen');
 		}
 		//update button positions
-		yellowSB.x = this.game.camera.x+(this.game.camera.width/2)-16;
+		/*yellowSB.x = this.game.camera.x+(this.game.camera.width/2)-16;
 		orangeLB.x = yellowSB.x-38;
-		orangeRB.x = yellowSB.x+38;
+		orangeRB.x = yellowSB.x+38;*/
     },
 
     quitGame: function (pointer) {

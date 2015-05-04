@@ -83,6 +83,7 @@ Secrets.Game.prototype = {
 		
 		LBflag = false;
 		RBflag = false;*/
+		this.game.input.mouseDownCallback(playerShoot);
 		
 		timeMark = this.game.time.now;
 		shootFlag = false;
@@ -106,10 +107,10 @@ Secrets.Game.prototype = {
 		{
 			player.idle();
 		}*/
-		if(this.game.input.activePointer.isDown)
+		/*if(this.game.input.activePointer.isDown)
 		{
 			playerShoot();
-		}
+		}*/
 		player.move();
 		if(this.game.time.now-timeMark > 2000)
 		{

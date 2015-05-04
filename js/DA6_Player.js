@@ -4,7 +4,7 @@ function newPlayer(game, xcoord, ycoord)
 	this.sprite = this.game.add.sprite(xcoord, ycoord, 'purpleBlock');
 	this.game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
 	this.MAX_SPEED = 500; // pixels/second
-	this.MINDIST = 0;
+	this.MINDIST = 32;
     this.ACCELERATION = 1500; // pixels/second/second
     this.DRAG = 500; // pixels/second
 	this.sprite.body.collideWorldBounds = true;

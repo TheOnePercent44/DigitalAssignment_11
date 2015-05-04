@@ -102,6 +102,10 @@ Secrets.Game.prototype = {
 			fireFlag = true;
 			playerShoot();
 		}
+		if(!this.game.input.activePointer.isDown)
+		{
+			fireFlag = false;
+		}
 		if(this.game.time.now-timeMark > 2000)
 		{
 			shootFlag = true;
